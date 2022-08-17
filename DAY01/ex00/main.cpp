@@ -16,6 +16,8 @@ int	main()
 	zombie1->announce();
 	Zombie *zombie2 = newZombie(name2);
 	zombie2->announce();
+	delete(zombie1);
+	delete(zombie2);
 	randomChump(name3);
 	randomChump(name4);
 }

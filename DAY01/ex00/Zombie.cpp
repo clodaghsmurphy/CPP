@@ -6,21 +6,23 @@ Zombie::Zombie(std::string name)
 }
 Zombie::~Zombie()
 {
-//	delete this;
+	std::cout << this->name <<" was destroyed" << std::endl;
 }
 
 Zombie* newZombie(std::string name)
 {
 	Zombie *_zombie = new Zombie(name);
 
+	if (!_zombie)
+		return (NULL);
 	return (_zombie);
 }
 
 void randomChump(std::string name)
 {
-	Zombie *_zombie = new Zombie(name);
+	Zombie _zombie(name);
 
-	_zombie->announce();
+	_zombie.announce();
 }
 
 void	Zombie::announce()
