@@ -7,6 +7,6 @@
 # include <string>
 # include <cstring>
 
-void    replace(std::string &buffer, std::string s1, std::string s2);
+void    replace(std::string file, std::string &buffer, std::string s1, std::string s2);
 
 #endif
