@@ -2,8 +2,13 @@
 
 int main()
 {
-   // int a;
+    Fixed a;
+    Fixed b(a);
+    Fixed c;
 
-    //std::cout << a.getRawBits() << std::end;
+    c = b;
+    std::cout << a.getRawBits() << std::endl;
+    std::cout << b.getRawBits() << std::endl;
+    std::cout << c.getRawBits() << std::endl;
     return (0);
 }

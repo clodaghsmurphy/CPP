@@ -1,7 +1,7 @@
 SRC = main.cpp \
 	Fixed.cpp \
 
-NAME = harlFilter
+NAME = Fixed
 
 CC = c++
 
