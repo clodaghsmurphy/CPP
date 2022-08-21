@@ -8,7 +8,7 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/DAY01/ex04/Replace",
+            "program": "${workspaceFolder}/DAY02/ex01/Fixed",
             "args": ["Clodagh", "Geaorge"],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
