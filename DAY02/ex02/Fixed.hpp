@@ -1,0 +1,43 @@
+# ifndef FIXED_HPP
+# define FIXED_HPP
+
+# include <iostream>
+# include <cmath>
+
+class Fixed
+{
+private:
+    int                 value;
+    const static int    no_bin_bits = 8;
+public:
+    Fixed();
+    ~Fixed();
+    Fixed(const int val);
+    Fixed(const float val);
+    Fixed(const Fixed& obj);
+    Fixed&  operator =( const Fixed& rhs);
+    Fixed  operator +( const Fixed& rhs);
+    Fixed  operator -( const Fixed& rhs);
+    Fixed  operator *( const Fixed& rhs);
+    Fixed  operator /( const Fixed& rhs);
+    bool  operator <( const Fixed& rhs);
+    bool  operator >( const Fixed& rhs);
+    bool operator ==( const Fixed& rhs);
+    bool  operator !=( const Fixed& rhs);
+    bool  operator >=( const Fixed& rhs);
+    bool  operator <=( const Fixed& rhs);
+    Fixed&  operator ++(void);
+    Fixed&  operator --(void);
+    Fixed  operator ++(int x);
+    Fixed  operator --(int x);
+    friend std::ostream&  operator <<(std::ostream &output, const Fixed& rhs);
+    int getRawBits(void) const;
+    void    setRawBits(const int raw);
+    int     toInt(void) const;
+    float   toFloat(void) const;
+    static Fixed min(Fixed a, Fixed b);
+    static Fixed max(Fixed a, Fixed b);
+};
+
+
+# endif
