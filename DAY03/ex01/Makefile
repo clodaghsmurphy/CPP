@@ -1,5 +1,6 @@
 SRC = main.cpp \
 	ClapTrap.cpp \
+	ScavTrap.cpp \
 
 NAME = ClapTrap
 
