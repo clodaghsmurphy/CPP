@@ -6,7 +6,7 @@ int main()
     ClapTrap clap("Mr.Clap");
     ScavTrap scag("Mr.Scav");
 
-    std::cout << std::endl << "  SCAV STATS  " << std::endl;
+    std::cout << std::endl << "  CLAP STATS  " << std::endl;
 
     std::cout << clap.get_name() << std::endl;
     std::cout << clap.get_attack() << std::endl;

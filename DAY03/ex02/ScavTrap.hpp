@@ -9,6 +9,7 @@ class ScavTrap : public ClapTrap {
     ~ScavTrap();
     ScavTrap(const ScavTrap& obj);
     ScavTrap&  operator =( const ScavTrap& rhs);
-}
+    void    guardGate();
+};
 
 # endif
