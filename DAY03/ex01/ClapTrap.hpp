@@ -5,7 +5,7 @@
 # include <string>
 
 class ClapTrap {
-    private:
+    protected:
     std::string name;
     unsigned int    HitPoints;
     unsigned int    EnergyPoints;
@@ -24,6 +24,11 @@ class ClapTrap {
     std::string get_name() const;
 };
 
-
+class FlagTrap : public ClapTrap{
+    public:
+    FlagTrap(std::string name);
+    ~FlagTrap();
+    void    highFiveGuys();
+};
 
 # endif

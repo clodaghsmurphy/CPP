@@ -2,7 +2,7 @@
 
 ClapTrap::ClapTrap(std::string name)
 {
-    std::cout << "Default ClapTrap constructor called for " << name << std::endl;
+    std::cout << "Default Clap constructor called for " << name << std::endl;
     this->name = name;
     this->AttackDamage = 0;
     this->HitPoints = 10;
@@ -11,7 +11,7 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Destructor called for " << this->name << std::endl;
+    std::cout << "Clap Destructor called for " << this->name << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& obj)
@@ -84,6 +84,4 @@ unsigned int ClapTrap::get_attack() const
 {
     return this->AttackDamage;
 }
-
-
 
