@@ -9,7 +9,7 @@ int main()
 
     string = "HI THIS IS BRAIN";
     std::cout << "String address is " << &string << std::endl;
-    std::cout << "String pointer address is " << &stringPTR << std::endl;
+    std::cout << "String pointer address is " << stringPTR << std::endl;
     std::cout << "String reference address is " << &stringREF << std::endl;
     std::cout << std::endl;
     std::cout << "String value is " << string << std::endl;

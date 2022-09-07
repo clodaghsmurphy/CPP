@@ -39,5 +39,9 @@ void    Harl::complain(std::string string_level)
     
     for (int i = 0; i < 4; i++)
         if (level[i] == string_level)
+        {
             (this->*funcs[i])();
+            return ;
+        }
+    std::cout << "Invalid Harl command" << std::endl;
 }

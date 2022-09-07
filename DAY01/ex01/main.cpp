@@ -12,7 +12,6 @@ int main(int ac, char **av)
         return (1);
     }
     n = std::atoi(av[1]);
-    std::cout << n << std::endl;
     if (n <= 0 )
     {
         std::cout << "Zombies can't be negative or 0" << std::endl;

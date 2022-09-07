@@ -10,15 +10,14 @@ int main(int ac, char **av)
 
     if (ac != 4 || strlen(av[1]) == 0 || strlen(av[2]) == 0 || strlen(av[3]) == 0)
     {
-        std::cout << "Please enter file name then string to find and the the string \
-        you want to replace it with" << std::endl;
+        std::cout << "Please enter file name then string to find and the the string you want to replace it with" << std::endl;
         return (1);
     }
     filename = av[1];
     s1 = av[2];
     s2 = av[3];
 
-    file.open("test.txt");
+    file.open(av[1]);
     if (file.fail())
     {
         std::cout << "File Error : invalid file" << std::endl;
