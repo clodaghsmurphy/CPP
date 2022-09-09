@@ -48,5 +48,6 @@ int main()
     scag.takeDamage(5);
     scag.guardGate();
     frag.beRepaired(5);
+    frag.highFiveGuys();
     return (0);
 }

@@ -8,28 +8,28 @@ int main()
 
     std::cout << std::endl << "  CLAP STATS  " << std::endl;
 
-    std::cout << clap.get_name() << std::endl;
-    std::cout << clap.get_attack() << std::endl;
-    std::cout << clap.get_energy() << std::endl;
-    std::cout << clap.get_hpoints() << std::endl;
+    std::cout << "NAME : " << clap.get_name() << std::endl;
+    std::cout <<"ATTACK DAMAGE : " <<  clap.get_attack() << std::endl;
+    std::cout <<  "ENERGY : " << clap.get_energy() << std::endl;
+    std::cout << "HIT POINTS : " << clap.get_hpoints() << std::endl;
 
 
     std::cout << std::endl << "  SCAV STATS  " << std::endl;
 
-    std::cout << scag.get_name() << std::endl;
-    std::cout << scag.get_attack() << std::endl;
-    std::cout << scag.get_energy() << std::endl;
-    std::cout << scag.get_hpoints() << std::endl;
+    std::cout << "NAME : " << scag.get_name() << std::endl;
+    std::cout << "ATTACK DAMAGE : " << scag.get_attack() << std::endl;
+    std::cout << "ENERGY : " << scag.get_energy() << std::endl;
+    std::cout << "HIT POINTS : " << scag.get_hpoints() << std::endl;
     std::cout << std::endl;
 
-    scag = ScavTrap("jones");
+    scag = ScavTrap("Jones");
     std::cout << std::endl
               << "  SCAV STATS  " << std::endl;
 
-    std::cout << scag.get_name() << std::endl;
-    std::cout << scag.get_attack() << std::endl;
-    std::cout << scag.get_energy() << std::endl;
-    std::cout << scag.get_hpoints() << std::endl;
+    std::cout << "NAME : " << scag.get_name() << std::endl;
+    std::cout << "ATTACK DAMAGE : " << scag.get_attack() << std::endl;
+    std::cout << "ENERGY : " << scag.get_energy() << std::endl;
+    std::cout << "HIT POINTS : " << scag.get_hpoints() << std::endl;
     std::cout << std::endl;
 
     scag.guardGate();

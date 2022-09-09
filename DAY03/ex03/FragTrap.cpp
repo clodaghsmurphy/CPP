@@ -3,14 +3,16 @@
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
     std::cout << "Default FragTrap constructor called for " << name << std::endl;
-    this->name = name;
-    this->AttackDamage = 30;
+    this->_name = name;
+    this->AttackDamage = 100;
     this->HitPoints = 100;
-    this->EnergyPoints = 100;
+    this->EnergyPoints = 30;
+   
 }
+
 FragTrap::~FragTrap()
 {
-    std::cout << "Default FragTrap destructor called for " << name << std::endl;
+    std::cout << "Default FragTrap destructor called for " << _name << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap &obj) : ClapTrap(obj)
@@ -32,4 +34,8 @@ FragTrap &FragTrap::operator=(const FragTrap &rhs)
 
 void    FragTrap::highFiveGuys(){
     std::cout << this->name << " Wants a high give guyzzzz" << std::endl;
+}
+
+std::string FragTrap::_get_name() {
+    return (this->_name);
 }

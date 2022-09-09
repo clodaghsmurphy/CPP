@@ -10,6 +10,7 @@ class ScavTrap : public ClapTrap {
     ScavTrap(const ScavTrap& obj);
     ScavTrap&  operator =( const ScavTrap& rhs);
     void    guardGate();
+    void    attack(const std::string &target);
 };
 
 # endif

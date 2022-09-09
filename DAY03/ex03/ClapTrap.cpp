@@ -1,28 +1,31 @@
 # include "ClapTrap.hpp"
 
+
+
 ClapTrap::ClapTrap(std::string name)
 {
-    std::cout << "Default ClapTrap constructor called for " << name << std::endl;
+    std::cout << "Default Clap constructor called for " << name << std::endl;
     this->name = name;
     this->AttackDamage = 0;
     this->HitPoints = 10;
     this->EnergyPoints = 10;
+    
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Destructor called for " << this->name << std::endl;
+    std::cout << "Clap Destructor called for " << this->name << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& obj)
 {
-    std::cout << "Copy constructor called for " << obj.name << std::endl;
+    std::cout << "copy constructor called" << std::endl;
     *this = obj;
 }
 
 ClapTrap&  ClapTrap::operator =( const ClapTrap& rhs)
 {
-    std::cout << "copy assingmeent operator called for " << rhs.name << std::endl;
+    std::cout << "copy assingmeent operator called" << std::endl;
     this->name = rhs.get_name();
     this->HitPoints = rhs.get_hpoints();
     this->EnergyPoints = rhs.get_energy();
@@ -47,7 +50,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
     std::cout << name << " takes " << amount << " damage " << std::endl;
     this->HitPoints -= amount;
-   std::cout << this->name << " remaining life : " << this->HitPoints << std::endl;
+   std::cout << "life left : " << this->HitPoints << std::endl;
 
 }
 
@@ -84,6 +87,4 @@ unsigned int ClapTrap::get_attack() const
 {
     return this->AttackDamage;
 }
-
-
 

@@ -3,13 +3,21 @@
    ScavTrap::ScavTrap(std::string name) : ClapTrap(name){
         std::cout << "Default ScavTrap constructor called for " << name << std::endl;
         this->name = name;
-        this->AttackDamage = 20;
-        this->HitPoints = 100;
-        this->EnergyPoints = 50;
+        this->_AttackDamage = 20;
+        this->_HitPoints = 100;
+        this->_EnergyPoints = 50;
+        
     
     }
     ScavTrap::~ScavTrap(){
         std::cout << "Default ScavTrap destructor called for " << name << std::endl;
+    }
+
+     ScavTrap::ScavTrap(){
+        std::cout << "Default ScavTrap constructor called for " << name << std::endl;
+        this->_AttackDamage = 20;
+        this->_HitPoints = 100;
+        this->_EnergyPoints = 50;
     }
 
     ScavTrap::ScavTrap(const ScavTrap& obj) : ClapTrap(obj){
@@ -32,7 +40,22 @@
         std::cout << name << " is on wall guard duty" << std::endl;
     }
 
-    void    ScavTrap::attack(const std::string &target)
+unsigned int ScavTrap::_get_hpoints() const
+{
+    return this->_HitPoints;
+}
+
+unsigned int ScavTrap::_get_energy() const
+{
+    return this->_EnergyPoints;
+}
+
+unsigned int ScavTrap::_get_attack() const
+{
+    return this->_AttackDamage;
+}
+
+void    ScavTrap::attack(const std::string &target)
 {
     if (this->EnergyPoints <= 0 || this->HitPoints <= 0)
     {

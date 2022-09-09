@@ -2,17 +2,19 @@
 
 int main()
 {
-    ClapTrap clap("clap");
+    ClapTrap clap("clap1");
     ClapTrap clap2("clap2");
-    ClapTrap clap3(ClapTrap("clap-copy"));
+    ClapTrap clap3("clap3");
 
     clap.attack(clap2.get_name());
-    clap.takeDamage(10);
+    clap2.takeDamage(10);
 
-    clap.beRepaired(1);
+    clap2.beRepaired(1);
+    clap2.attack(clap.get_name());
+
     clap.attack(clap3.get_name());
-    std::cout << "Clap before copy assignemnt" << clap.get_name() << std::endl;
-    clap = clap2;
-    std::cout << "Clap after copy assignemnt" << clap.get_name() << std::endl;
-    std::cout << "clap 3 = " << clap3.get_name() << std::endl;
+    clap3.takeDamage(5);
+    clap3.beRepaired(2);
+    clap3.attack(clap.get_name());
+    return (0);
 }
