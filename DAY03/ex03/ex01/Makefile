@@ -1,15 +1,12 @@
 SRC = main.cpp \
-	Animal.cpp \
-	WrongAnimal.cpp \
-	Dog.cpp \
-	Cat.cpp \
-	WrongCat.cpp \
+	ClapTrap.cpp \
+	ScavTrap.cpp \
 
-NAME = Animal
+NAME = ClapTrap
 
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g 
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 OBJ = $(SRC:.cpp=.o) 
 

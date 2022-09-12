@@ -14,8 +14,9 @@ class DiamondTrap : public ScavTrap, public FragTrap  {
     DiamondTrap &operator=(const DiamondTrap &rhs);
     using ScavTrap::EnergyPoints;
     void    whoAmI();
-    
-
+    void    print();
+    private:
+    std::string name;
 };
 
 #endif 

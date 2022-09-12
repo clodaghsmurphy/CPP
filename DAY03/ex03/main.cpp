@@ -38,12 +38,8 @@ int main()
 
      std::cout << std::endl 
               << "  DIAMOND STATS  " << std::endl;
-
-    std::cout << "NAME : " << diamond.get_name() << std::endl;
-    std::cout << "ATTACK DAMAGE : " << diamond.get_attack() << std::endl;
-    std::cout << "ENERGY : " << diamond.get_energy() << std::endl;
-    std::cout << "HIT POINTS : " << diamond.get_hpoints() << std::endl;
-    std::cout << std::endl;
+    diamond.print();
+    
 
     diamond.attack(scag.get_name());
     diamond.highFiveGuys();

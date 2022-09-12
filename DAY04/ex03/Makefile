@@ -3,9 +3,9 @@ SRC = main.cpp \
 	WrongAnimal.cpp \
 	Dog.cpp \
 	Cat.cpp \
-	WrongCat.cpp \
+	Brain.cpp \
 
-NAME = Animal
+NAME = Abstract
 
 CC = c++
 
