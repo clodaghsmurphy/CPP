@@ -7,6 +7,8 @@ class IMateriaSource {
     public:
     IMateriaSource();
     virtual ~IMateriaSource();
+    IMateriaSource(const IMateriaSource &obj);
+    IMateriaSource &operator=(const IMateriaSource &rhs);
     virtual void learnMateria(AMateria *_materia) = 0;
     virtual AMateria* createMateria(std::string const &type) = 0;
     protected:

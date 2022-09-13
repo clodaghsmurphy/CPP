@@ -1,6 +1,6 @@
 # include "Materia.hpp"
 
-AMateria::AMateria(const std::string &type)
+AMateria::AMateria(const std::string &type) 
 {
 	this->type = type;
 }

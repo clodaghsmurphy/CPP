@@ -4,6 +4,8 @@ SRC = main.cpp \
 	IMateriaSource.cpp \
 	Ice.cpp \
 	Cure.cpp \
+	Character.cpp \
+	ICharacter.cpp \
 	
 
 NAME =Materia

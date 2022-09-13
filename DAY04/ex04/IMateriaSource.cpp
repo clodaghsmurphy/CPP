@@ -20,11 +20,12 @@ IMateriaSource &IMateriaSource::operator=(const IMateriaSource &rhs)
 {
 
 	std::cout << "IMateriaSource copy assingmeent operator called" << std::endl;
-	this->Materia= rhs.Materia;
+	for (int i = 0; i < 4 ; i++)
+		this->Materia[i] = rhs.Materia[i];
 	return *this;
 }
 
 void    IMateriaSource::learnMateria(AMateria *_materia)
 {
-    
+    this->Materia[0] = _materia->getType();
 }
