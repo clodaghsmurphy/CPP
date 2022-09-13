@@ -15,10 +15,10 @@ int main()
 	std::cout << i->getType() << " " << std::endl;
 	i->makeSound();
 	j->makeSound();
-	meta->makeSound();
+	//meta->makeSound();
 
 	delete(i);
-	delete(meta);
+	//delete(meta);
 
 	const WrongAnimal *meta2 = new WrongAnimal();
 	const WrongAnimal *i2 = new WrongCat();

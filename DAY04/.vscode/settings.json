@@ -1,5 +1,8 @@
 {
     "files.associations": {
+        "string": "cpp",
+        "new": "cpp",
+        "iostream": "cpp",
         "array": "cpp",
         "atomic": "cpp",
         "bit": "cpp",
@@ -28,7 +31,6 @@
         "numeric": "cpp",
         "optional": "cpp",
         "random": "cpp",
-        "string": "cpp",
         "string_view": "cpp",
         "system_error": "cpp",
         "tuple": "cpp",
@@ -36,10 +38,8 @@
         "utility": "cpp",
         "initializer_list": "cpp",
         "iosfwd": "cpp",
-        "iostream": "cpp",
         "istream": "cpp",
         "limits": "cpp",
-        "new": "cpp",
         "numbers": "cpp",
         "ostream": "cpp",
         "ranges": "cpp",

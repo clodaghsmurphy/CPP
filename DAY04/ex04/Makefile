@@ -1,12 +1,12 @@
 SRC = main.cpp \
-	Animal.cpp \
-	WrongAnimal.cpp \
-	WrongCat.cpp \
-	Dog.cpp \
-	Cat.cpp \
-	Brain.cpp \
+	Materia.cpp \
+	MateriaSource.cpp \
+	IMateriaSource.cpp \
+	Ice.cpp \
+	Cure.cpp \
+	
 
-NAME = Abstract
+NAME =Materia
 
 CC = c++
 
