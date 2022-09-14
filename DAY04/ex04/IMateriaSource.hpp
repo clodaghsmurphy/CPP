@@ -12,7 +12,7 @@ class IMateriaSource {
     virtual void learnMateria(AMateria *_materia) = 0;
     virtual AMateria* createMateria(std::string const &type) = 0;
     protected:
-    std::string Materia[4];
+    AMateria    *Materia[4];
 };
 
 #endif

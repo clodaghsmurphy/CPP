@@ -2,12 +2,12 @@
 
 Cure::Cure() : AMateria("cure")
 {
-    std::cout << "MateriaSource constructor called" << std::endl;
+    this->type = type;
 }
 
 Cure::~Cure()
 {
-    std::cout << "MateriaSource destructor called" << std::endl;
+   // std::cout << "Cure destructor called" << std::endl;
 }
 
 Cure::Cure(const Cure &obj) : AMateria("cure")
@@ -21,4 +21,20 @@ Cure &Cure::operator=(const Cure &rhs)
 	this->type = rhs.type;
 	std::cout << "Cure copy assingmeent operator called" << std::endl;
 	return *this;
+}
+
+std::string const &Cure::getType() const
+{
+	return this->type;
+}
+
+Cure*	Cure::clone() const
+{
+	Cure* res = new Cure();
+	return res;
+}
+
+void	Cure::use(ICharacter& target)
+{
+	std::cout << "* heals " << target.getName() << "'s wounds *" <<std::endl;
 }

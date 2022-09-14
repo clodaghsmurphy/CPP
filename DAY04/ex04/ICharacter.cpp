@@ -1,13 +1,15 @@
 # include "ICharacter.hpp"
 
-ICharacter::ICharacter()
+ICharacter::ICharacter(std::string name)
 {
-    std::cout << "MateriaSource constructor called" << std::endl;
+    //std::cout << "ICharacter constructor called for " << this->name << std::endl;
+	this->name = name;
+	//this->inventory = NULL;
 }
 
 ICharacter::~ICharacter()
 {
-    std::cout << "MateriaSource destructor called" << std::endl;
+    //std::cout << "ICharcter destructor called" << std::endl;
 }
 
 ICharacter::ICharacter(const ICharacter &obj)
@@ -18,8 +20,7 @@ ICharacter::ICharacter(const ICharacter &obj)
 
 ICharacter &ICharacter::operator=(const ICharacter &rhs)
 {
-
 	std::cout << "ICharacter copy assingmeent operator called" << std::endl;
-	//this->Materia= rhs.Materia;
+	this->name = rhs.name;
 	return *this;
 }
