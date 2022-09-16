@@ -1,0 +1,66 @@
+   # include "ScavTrap.hpp"
+   
+   ScavTrap::ScavTrap(std::string name) : ClapTrap(name){
+        std::cout << "Default ScavTrap constructor called for " << name << std::endl;
+        this->name = name;
+        this->AttackDamage = 20;
+        this->HitPoints = 100;
+        this->EnergyPoints = 50;
+    }
+
+    ScavTrap::~ScavTrap() {
+        std::cout << "Default ScavTrap destructor called for " << name << std::endl;
+    }
+
+     ScavTrap::ScavTrap() : ClapTrap("Generic"){
+        this->name = "Generic";
+        std::cout << "Default ScavTrap constructor called for " << name << std::endl;
+        this->AttackDamage = 20;
+        this->HitPoints = 100;
+        this->EnergyPoints = 50;
+    }
+
+    ScavTrap::ScavTrap(const ScavTrap& obj) : ClapTrap(obj){
+       std::cout << "ScavTrap copy constructor called" << std::endl;
+        *this = obj;
+    }
+
+    ScavTrap&  ScavTrap::operator =(const ScavTrap& rhs){
+         
+        std::cout << "ScavTrap copy assingmeent operator called" << std::endl;
+        this->name = rhs.name;
+        this->HitPoints = rhs.HitPoints;
+        this->EnergyPoints = rhs.EnergyPoints;
+        this->AttackDamage = rhs.AttackDamage;
+        return *this;
+    }
+
+    void    ScavTrap::guardGate()
+    {
+        std::cout << name << " is on wall guard duty" << std::endl;
+    }
+
+void    ScavTrap::print()
+{
+    std::cout << std::endl
+              << "  SCAV STATS  " << std::endl;
+
+     std::cout << "NAME : " << this->name << std::endl;
+    std::cout << "ATTACK DAMAGE : " << this->AttackDamage << std::endl;
+    std::cout << "ENERGY : " << this->EnergyPoints << std::endl;
+    std::cout << "HIT POINTS : " << this->HitPoints << std::endl;
+    std::cout << std::endl;
+}
+
+void    ScavTrap::attack(const std::string &target)
+{
+    if (this->EnergyPoints <= 0 || this->HitPoints <= 0)
+    {
+        if (this->HitPoints <= 0)
+            std::cout << this->name << " has no life left to attack" << std::endl;
+        else
+            std::cout << "no energy left to to attack" << std::endl;
+        return ;
+    }
+    std::cout << "ScavTrap " << this->name << " attacks " << target << std::endl;;
+}

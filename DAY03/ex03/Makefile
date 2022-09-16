@@ -1,14 +1,18 @@
-SRC = main.cpp \
-	ClapTrap.cpp \
-	FragTrap.cpp \
-	ScavTrap.cpp \
-	DiamondTrap.cpp \
+SRC = src/main.cpp \
+	src/ClapTrap.cpp \
+	src/FragTrap.cpp \
+	src/ScavTrap.cpp \
+	src/DiamondTrap.cpp \
 
 NAME = DiamondTrap
 
+INCLUDE = -I ./include
+
+DEP = ${SRC:.cpp=.d}
+
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98 -g
+CFLAGS = -MMD -Wall -Wextra -Werror ${INCLUDE} -std=c++98 -g 
 
 OBJ = $(SRC:.cpp=.o) 
 
@@ -21,8 +25,10 @@ $(NAME):		$(OBJ)
 				@${CC} ${CFLAGS}  -o ${NAME} ${OBJ}
 				@echo "${YELLOW}          [OK]\n"
 
+-include $(DEP)
 clean:
-	rm -f *.o
+	rm -f ${OBJ}
+	rm -f $(DEP)
 	
 fclean: clean
 	rm -f ${NAME}
