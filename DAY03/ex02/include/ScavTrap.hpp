@@ -11,8 +11,6 @@ class ScavTrap : public ClapTrap {
     ScavTrap&  operator =( const ScavTrap& rhs);
     void    guardGate();
     void    attack(const std::string &target);
-    private:
-    unsigned int EnergyPoints;
 };
 
 # endif
