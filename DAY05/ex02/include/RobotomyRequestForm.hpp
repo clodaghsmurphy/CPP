@@ -2,6 +2,7 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 # include "Bureaucrat.hpp"
+# include "Form.hpp"
 
 class Bureaucrat;
 

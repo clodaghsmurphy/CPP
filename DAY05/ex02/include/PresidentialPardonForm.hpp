@@ -2,10 +2,11 @@
 #define PRESIDENTIALPARDONFROM_HPP
 
 # include "Bureaucrat.hpp"
+# include "Form.hpp"
 
 class Bureaucrat;
 
-class PresidentialPardonForm {
+class PresidentialPardonForm : public Form{
     private:
     const std::string name;
     bool    fsigned;

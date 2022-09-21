@@ -18,7 +18,7 @@ class Form {
     Form(const Form &obj);
     Form &operator=(const Form &rhs);
     /*---------FUNCTIONS -----------------*/
-    void                beSigned(Bureaucrat _bt);
+    virtual void                beSigned(Bureaucrat _bt) = 0;
     /*---------------GETTERS ------------------*/
     unsigned int        getGradeSign() const;
     unsigned int        getGradeExec() const;

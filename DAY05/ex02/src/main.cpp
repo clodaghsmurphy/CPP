@@ -7,11 +7,10 @@ void    test1(){
     try
     {
     Bureaucrat bob("Bob", 1);
-    Form        form1("A1", 20, 20);
-    ShrubberyCreationForm shrub(form1.getName());
+    ShrubberyCreationForm shrub("shrub");
     std::cout << bob;
-    std::cout << form1;
-    bob.signForm(form1);
+    std::cout << shrub;
+    bob.signForm(shrub);
     }
     catch (std::exception &e)
     {
@@ -19,7 +18,7 @@ void    test1(){
     }
 }
 
-void test2(){
+/* void test2(){
     std::cout << "////////////////TEST2 🧪//////////////" << std::endl;
     try{
      Bureaucrat bob("Joe", 21);
@@ -49,12 +48,12 @@ void test3(){
         std::cout << e.what() << std::endl;
     }
 }
-
+ */
 int main()
 {
     test1();
-   test2();
-   test3();
+   //test2();
+   //test3();
 
     return (0);
 }
