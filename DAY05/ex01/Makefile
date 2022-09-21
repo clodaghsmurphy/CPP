@@ -1,7 +1,8 @@
 SRC = src/main.cpp \
-	src/Bureaucrat.cpp
+	src/Bureaucrat.cpp \
+	src/Form.cpp
 
-NAME = Bureaucrat
+NAME = Form
 
 INCLUDE = -I ./include
 

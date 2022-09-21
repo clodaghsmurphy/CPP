@@ -1,10 +1,15 @@
 # include "Bureaucrat.hpp"
+# include "Form.hpp"
 
 void    test1(){
+    std::cout << "////////////////TEST1 🧪//////////////" << std::endl;
     try
     {
-    Bureaucrat bob("Bob", 0);
+    Bureaucrat bob("Bob", 1);
+    Form        form1("A1", 20, 20);
     std::cout << bob;
+    std::cout << form1;
+    bob.signForm(form1);
     }
     catch (std::exception &e)
     {
@@ -13,9 +18,13 @@ void    test1(){
 }
 
 void test2(){
-    try {
-    Bureaucrat joe("Joe1", 155);
-    std::cout << joe << std::endl;
+    std::cout << "////////////////TEST2 🧪//////////////" << std::endl;
+    try{
+     Bureaucrat bob("Joe", 21);
+    Form        form1("A2", 20, 20);
+    std::cout << bob;
+    std::cout << form1;
+    bob.signForm(form1);
     }
     catch (std::exception &e)
     {
@@ -25,11 +34,13 @@ void test2(){
 
 
 void test3(){
-    try {
-    Bureaucrat joe("Joe2", 150);
-       std::cout << joe ;
-    joe.downGrade();
-
+    std::cout << "////////////////TEST3 🧪//////////////" << std::endl;
+    try{
+    Bureaucrat bob("Joe", 0);
+    Form        form1("A2", 20, 20);
+    std::cout << bob;
+    std::cout << form1;
+    form1.beSigned(bob);
     }
     catch (std::exception &e)
     {
@@ -42,9 +53,6 @@ int main()
     test1();
    test2();
    test3();
-   /* Bureaucrat *john = new Bureaucrat("John", 1);
-    std::cout << john->getName() << std::endl; 
-    std::cout << john->getGrade() << std::endl; ;
-    john ->upGrade(); */
+
     return (0);
 }

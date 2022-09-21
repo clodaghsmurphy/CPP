@@ -47,7 +47,7 @@ void    Bureaucrat::upGrade()
     }
       catch (std::exception &e)
     {
-        std::cout << "Uprade Error :";
+        std::cout << "❌ Uprade Error :";
         std::cout << e.what() << std::endl;
     }
     try {
@@ -56,7 +56,7 @@ void    Bureaucrat::upGrade()
     }
     catch (std::exception &e)
     {
-        std::cout << "UpGRade Error :";
+        std::cout << "❌ UpGRade Error :";
         std::cout << e.what() << std::endl;
     }
 }
@@ -69,7 +69,7 @@ void    Bureaucrat::downGrade()
     }
       catch (std::exception &e)
     {
-        std::cout << "Downgrade Error :";
+        std::cout << "❌ Downgrade Error :";
         std::cout << e.what() << std::endl;
     }
     try {
@@ -78,14 +78,16 @@ void    Bureaucrat::downGrade()
     }
     catch (std::exception &e)
     {
-        std::cout << "DownGrade Error :";
+        std::cout << "❌ DownGrade Error :";
         std::cout << e.what() << std::endl;
     }
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& _bt)
 {
+     std::cout << "      🤵BUREAUCRAT STATS🤵        " << std::endl;
     os << "Bureaucrat " <<  _bt.getName() << std::endl;
     os << "Grade : " << _bt.getGrade() << std::endl;
+    std::cout << std::endl;
     return (os);
 }

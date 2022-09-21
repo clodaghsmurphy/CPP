@@ -3,8 +3,9 @@
 
 # include <iostream>
 # include <exception>
+# include "Form.hpp"
 
-
+class Form;
 
 class Bureaucrat {
     private:
@@ -32,6 +33,7 @@ class Bureaucrat {
     void        upGrade();
     void        downGrade();
     unsigned int getGrade() const; 
+    void        signForm(Form &form) const;
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& _bt);
