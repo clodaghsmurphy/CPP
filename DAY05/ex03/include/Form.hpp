@@ -14,7 +14,7 @@ class Form {
     public:
     /*---------CANONICAL FORM -----------------*/
     Form(std::string name, unsigned int gsign, unsigned int gexec);
-    ~Form();
+    virtual ~Form();
     Form(const Form &obj);
     Form &operator=(const Form &rhs);
     /*---------FUNCTIONS -----------------*/

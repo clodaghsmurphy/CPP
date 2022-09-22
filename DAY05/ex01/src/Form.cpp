@@ -68,6 +68,12 @@ bool    Form::getFsigned() const
 {
     return this->fsigned;
 }
+
+void    Form::setFsigned(bool sign)
+{
+    this->fsigned = sign;
+}
+
 std::ostream& operator<<(std::ostream& os, const Form& form)
 {
     std::cout << "      📝FORM STATS📝      " << std::endl;
