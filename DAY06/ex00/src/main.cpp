@@ -8,6 +8,8 @@ int main(int ac, char **av)
         return (1);
     }
     std::string str = av[1];
-    convert(str);
+    if (infinity_cases(str) == 1)
+        return (0);
+    //convert(str);
 
 }
