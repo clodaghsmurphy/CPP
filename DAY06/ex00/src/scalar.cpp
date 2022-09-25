@@ -72,52 +72,97 @@ void    Scalar::get_type(const std::string str)
 void    Scalar::check_overflows(const std::string str)
 {
     if (this->is_char == 1)
-        print_char(static_cast<char>(str[0]));
-   // print_int(str);
-   // print_float(str);
-   // print_double(str);
+    {
+        char res = static_cast<char>(str[0]);
+        print_char(res);
+        print_int(res);
+        print_float(res);
+        print_double(res);
+    }
+    if (this->is_int == 1)
+    {
+        int res = std::atoi(str.c_str());
+        print_char(static_cast<char>(res));
+        print_int(static_cast<int>(res));
+        print_float(static_cast<float>(res));
+        print_double(static_cast<double>(res));
+    }
+    if (this->is_float == 1)
+    {
+        float res = std::stof(str.c_str());
+        print_char(res);
+        std::cout <<"in is float" <<res << std::endl;
+        print_int(static_cast<int>(res));
+        print_float(res);
+        print_double(res);
+    }
+    if (this->is_double == 1)
+    {
+        double res = std::stod(str.c_str());
+        print_char(res);
+        print_int(res);
+        print_float(res);
+        print_double(res);
+    }
 }
 
-/* void    Scalar::print_int(const std::string str)
+void    Scalar::print_int(const int res)
 {
-    int res = static_cast<int>(str);
+    std::cout << res << std::endl;
     if (res > std::numeric_limits<int>::max() \
     || res < std::numeric_limits<int>::min())
         std::cout << "int : impossible" << std::endl;
-    std::cout << "int : " << res << std::endl;
+    else
+        std::cout << "int : " << res << std::endl;
 }
- */
-void    Scalar::print_char(char res)
-{
 
-    if (res > std::numeric_limits<int>::max() \
-    || res < std::numeric_limits<int>::min())
+void    Scalar::print_char(const char res)
+{
+    if ((res >= 0 && res < 32) || res >= 127 || res < 0)
+    {
         std::cout << "char : impossible" << std::endl;
-    std::cout << "char : " << res << std::endl;
+    }
+    else if (res > std::numeric_limits<char>::max() || res < std::numeric_limits<char>::min())
+    {
+        std::cout << "char : impossible" << std::endl;
+    }
+    else
+    {
+        std::cout << "char : " << res << std::endl;
+    }
+    
 }
-/* 
-void    Scalar::print_float(const std::string str)
+ 
+void    Scalar::print_float(const float res)
 {
-    char res = static_cast<float>(str);
-    if (res > std::numeric_limits<int>::max() \
-    || res < std::numeric_limits<int>::min())
-        std::cout << "int : impossible" << std::endl;
-    std::cout << "int : " << res << std::endl;
+    if (res > std::numeric_limits<float>::max() \
+    || res < -std::numeric_limits<float>::max())
+    {
+        std::cout << "float : impossible" << std::endl;
+    }
+    else
+    {
+        std::cout << std::fixed << std::setprecision(1);
+        std::cout << "float : " << res << "f" << std::endl;
+    }   
 }
 
-void    Scalar::print_double(const std::string str)
+void    Scalar::print_double(const double res)
 {
-    char res = static_cast<float>(str);
-    if (res > std::numeric_limits<int>::max() \
-    || res < std::numeric_limits<int>::min())
-        std::cout << "int : impossible" << std::endl;
-    std::cout << "int : " << res << std::endl;
+    if (res > std::numeric_limits<double>::max() || res < -std::numeric_limits<double>::max())
+    {
+        std::cout << "double : impossible" << std::endl;
+    }
+    else
+    {
+        std::cout << std::fixed << std::setprecision(1);
+        std::cout << "double : " << (double)res << std::endl;
+    }
 }
- */
+ 
 
 bool Scalar::ft_is_char(std::string str)
 {
-    std::cout << str[0][1][2]  << std::endl;
     if (str.length() == 1)
     {
         if (!isdigit(str[0]))
@@ -153,7 +198,7 @@ bool Scalar::ft_is_double(const std::string str)
 
     if (str[i] == '+' || str[i] == '-')
         i++;
-    while (i < ((int)str.length() - 1))
+    while (i < ((int)str.length()))
     {
         if (!isdigit(str[i]) || dec == 2)
             return (0);
@@ -177,9 +222,9 @@ bool    Scalar::ft_is_float(const std::string str)
 
     if (str[i] == '+' || str[i] == '-')
         i++;
-    while (i < (int)str.length() - 2)
+    while (i < (int)str.length() - 1)
     {
-        if (!isdigit(str[i]) || dec == 2)
+        if ((!isdigit(str[i]) && str[i] != '.')  || dec == 2)
             return (0);
         if (str[i] == '.')
             dec++;

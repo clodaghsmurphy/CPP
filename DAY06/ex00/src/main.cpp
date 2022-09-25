@@ -4,7 +4,7 @@ int main(int ac, char **av)
 {
     Scalar *num = new Scalar();
 
-    if (ac < 2 || !strlen(av[1]))
+    if (ac != 2 || !strlen(av[1]))
     {
         std::cout << "Please enter C++ literal";
         return (1);
