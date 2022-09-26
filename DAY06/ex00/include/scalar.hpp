@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <string.h>
+# include <cstdlib>
 # include <string>
 # include <ctype.h>
 # include <limits>
@@ -18,7 +19,7 @@ class Scalar{
         /*-------------MEMBERs---------------*/
         void    get_type(const std::string str);
         void    print_int(const int res);
-        void    check_overflows(const std::string str);
+        void    check_overflows(std::string str);
         void    print_float(const float res);
         void    print_double(const double res);
         void    print_char(const char res);

@@ -1,5 +1,6 @@
 SRC = src/main.cpp \
 	src/scalar.cpp \
+	src/scalar_bis.cpp \
 
 NAME = Scalar
 

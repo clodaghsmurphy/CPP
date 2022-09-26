@@ -88,11 +88,59 @@ function test_float
 	exec_test '-2147483649.0f'
 }
 
+function test_double
+{
+	printf "$BOLDCYAN /////////////////// DOUBLE TESTS //////////////// $RESET"
+	echo 
+	echo 
+	printf "$BOLDYELLOW /////////////////// 0 INT TEST //////////////// $RESET"
+	exec_test '0.0'
+	printf "$BOLDYELLOW /////////////////// 42 TEST //////////////// $RESET"
+	exec_test '42.0'
+	printf "$BOLDYELLOW /////////////////// 42 TEST //////////////// $RESET"
+	exec_test '+42.0'
+	printf "$BOLDYELLOW /////////////////// 42 TEST //////////////// $RESET"
+	exec_test '42.53405'
+	printf "$BOLDYELLOW /////////////////// MAX INT TEST //////////////// $RESET"
+	exec_test '2147483647.0'
+	printf "$BOLDYELLOW /////////////////// MAX INT + 1 TEST //////////////// $RESET"
+	exec_test '2147483648.0'
+	printf "$BOLDYELLOW /////////////////// MIN INT TEST //////////////// $RESET"
+	exec_test '-2147483648.0'
+	printf "$BOLDYELLOW /////////////////// MIN INT + 1 TEST //////////////// $RESET"
+	exec_test '-2147483649.0'
+}
+
+function special_case
+{
+printf "$BOLDCYAN /////////////////// SPECIAL CASES //////////////// $RESET"
+	echo 
+	echo
+	printf "$BOLDYELLOW /////////////////// INF //////////////// $RESET"
+	exec_test 'inf'
+	printf "$BOLDYELLOW /////////////////// +INF //////////////// $RESET"
+	exec_test '+inf'
+	printf "$BOLDYELLOW /////////////////// -INF //////////////// $RESET"
+	exec_test '-inf'
+	printf "$BOLDYELLOW /////////////////// NAN //////////////// $RESET"
+	exec_test 'nan'
+	printf "$BOLDYELLOW /////////////////// inff //////////////// $RESET"
+	exec_test 'inff'
+	printf "$BOLDYELLOW /////////////////// +inff //////////////// $RESET"
+	exec_test '+inff'
+	printf "$BOLDYELLOW /////////////////// -inff //////////////// $RESET"
+	exec_test '-inff'
+	printf "$BOLDYELLOW /////////////////// nanf //////////////// $RESET"
+	exec_test 'nanf'
+}
+
 main()
 {
 	test_int
 	char_test
 	test_float
+	test_double
+	special_case
 }
 
 main

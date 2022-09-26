@@ -28,15 +28,15 @@ Scalar::Scalar(const Scalar &obj)
 
 int    infinity_cases(const std::string str)
 {
-   std::string infs[5] = {"-inff", "+inff", "nanf", "-inf", "nan"};
-   for (int i = 0; i < 5; i++)
+   std::string infs[8] = {"-inff", "+inff", "inff", "nanf", "-inf", "inf", "+inf", "nan"};
+   for (int i = 0; i < 8; i++)
    {
         if (infs[i] == str)
         {
             std::cout << "char: impossible" << std::endl;
             std::cout << "int: impossible" << std::endl;
-            std::cout << "float: nanf" << std::endl;
-            std::cout << "char: nan" << std::endl;
+            std::cout << "float: " << infs[i] << std::endl;
+            std::cout << "char: " << infs[i] << std::endl;
             return (1);
         }
    }
@@ -69,50 +69,11 @@ void    Scalar::get_type(const std::string str)
     return ;
 }
 
-void    Scalar::check_overflows(const std::string str)
-{
-    if (this->is_char == 1)
-    {
-        char res = static_cast<char>(str[0]);
-        print_char(res);
-        print_int(res);
-        print_float(res);
-        print_double(res);
-    }
-    if (this->is_int == 1)
-    {
-        int res = std::atoi(str.c_str());
-        print_char(static_cast<char>(res));
-        print_int(static_cast<int>(res));
-        print_float(static_cast<float>(res));
-        print_double(static_cast<double>(res));
-    }
-    if (this->is_float == 1)
-    {
-        float res = std::stof(str.c_str());
-        print_char(res);
-        std::cout <<"in is float" <<res << std::endl;
-        print_int(static_cast<int>(res));
-        print_float(res);
-        print_double(res);
-    }
-    if (this->is_double == 1)
-    {
-        double res = std::stod(str.c_str());
-        print_char(res);
-        print_int(res);
-        print_float(res);
-        print_double(res);
-    }
-}
+
 
 void    Scalar::print_int(const int res)
 {
-    std::cout << res << std::endl;
-    if (res > std::numeric_limits<int>::max() \
-    || res < std::numeric_limits<int>::min())
-        std::cout << "int : impossible" << std::endl;
-    else
+ 
         std::cout << "int : " << res << std::endl;
 }
 
@@ -135,29 +96,19 @@ void    Scalar::print_char(const char res)
  
 void    Scalar::print_float(const float res)
 {
-    if (res > std::numeric_limits<float>::max() \
-    || res < -std::numeric_limits<float>::max())
-    {
-        std::cout << "float : impossible" << std::endl;
-    }
-    else
-    {
+    
+
         std::cout << std::fixed << std::setprecision(1);
         std::cout << "float : " << res << "f" << std::endl;
-    }   
+
 }
 
 void    Scalar::print_double(const double res)
 {
-    if (res > std::numeric_limits<double>::max() || res < -std::numeric_limits<double>::max())
-    {
-        std::cout << "double : impossible" << std::endl;
-    }
-    else
-    {
+    
         std::cout << std::fixed << std::setprecision(1);
-        std::cout << "double : " << (double)res << std::endl;
-    }
+        std::cout << "double : " << res << std::endl;
+
 }
  
 
@@ -200,7 +151,7 @@ bool Scalar::ft_is_double(const std::string str)
         i++;
     while (i < ((int)str.length()))
     {
-        if (!isdigit(str[i]) || dec == 2)
+        if ((!isdigit(str[i]) && str[i] != '.')  || dec == 2)
             return (0);
         if (str[i] == '.')
             dec++;
