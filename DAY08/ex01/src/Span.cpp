@@ -8,7 +8,7 @@ Span::Span() : stored(0), max(0)
 
 Span::Span(unsigned int N) : stored(0), max(N)
 {
-   // vec.reserve(N);
+   vec.reserve(N);
     return ;
 }
 
@@ -45,33 +45,31 @@ void    Span::addRange(std::vector<int>::iterator begin, std::vector<int>::itera
     std::vector<int> vec1;
     for (unsigned int i = 0; i < max; i++)
         vec1.push_back(rand()%100);
-    if (vec.size() > max)
-        throw OutofBounds();
+    printVec();
     vec.insert(begin, vec1.begin(), vec1.end());
     (void)end;
-    //vec.insert(begin, rand() % 100);
 
 }
-
+bool ismore(int i, int j)
+{
+    return (i < j);
+}
 int Span::shortestSpan()
 {
-    int res = 0;
-    int smallest = 0;
+    int res = std::numeric_limits<int>::max();
     std::vector<int>::iterator begin;
     std::vector<int> vec2;
 
     if (vec.size() == 0 || vec.size() == 1)
         throw VecTooSmall();
     std::copy(vec.begin(), vec.end(), back_inserter(vec2));
-    std::sort(vec2.begin(), vec2.end());
+    std::sort(vec2.begin(), vec2.end(), ismore);
     begin = vec2.begin();
-    smallest = *vec2.begin();
-    begin++;
-    res = *begin - smallest;
-    while (begin < vec2.end())
+    while (begin <= vec2.end() - 2)
     {
-        if (*begin - smallest <= res)
-            res = *begin - smallest;
+
+        if ( *(begin + 1) - *begin <= res)
+            res = *(begin + 1) - *begin ;
         begin++;
     }
     return (res);
@@ -80,23 +78,12 @@ int Span::shortestSpan()
 int Span::longestSpan()
 {
     int res= 0;
-    int smallest = 0;
     std::vector<int>::iterator begin;
-    std::vector<int> vec2;
 
     if (vec.size() == 0 || vec.size() == 1)
         throw VecTooSmall();
-    std::copy(vec.begin(), vec.end(), back_inserter(vec2));
-    std::sort(vec2.begin(), vec2.end());
-    begin = vec2.begin();
-    smallest = *begin;
-
-    while (begin < vec2.end())
-    {
-        if (*begin - smallest >= res)
-            res = *begin - smallest;
-        begin++;
-    }
+    begin = vec.begin();
+    res =  *(std::max_element(begin, vec.end())) - *(std::min_element(begin, vec.end()));
     return res;
     
 }

@@ -6,6 +6,7 @@
 # include <cstdlib>
 # include <algorithm>
 # include <iterator>
+# include <limits>
 
 class Span{
     public:

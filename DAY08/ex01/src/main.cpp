@@ -106,11 +106,42 @@ void test6()
     }
 }
 
+void test7()
+{
+        Span sp = Span(5);
+
+    sp.addNumber(6);
+    sp.addNumber(3);
+    sp.addNumber(17);
+    sp.addNumber(9);
+    sp.addNumber(11);
+    sp.printVec();
+
+    std::cout << "\033[1m\033[34mSHORTEST SPAN : \033[0m\033[37m" << sp.shortestSpan() << std::endl;
+        std::cout << "\033[1m\033[34mLONGEST SPAN : \033[0m\033[37m" << sp.longestSpan() << std::endl;
+    return ;
+}
+
+void test8()
+{
+    Span sp = Span(5);
+    std::vector<int>::iterator itb;
+    std::vector<int>::iterator ite;
+
+    
+    itb = sp.getVec().begin();
+    ite = sp.getVec().end();
+    sp.addRange(itb, ite);
+    std::cout << "\033[1m\033[34mSHORTEST SPAN : \033[0m\033[37m" << sp.shortestSpan() << std::endl;
+    std::cout << "\033[1m\033[34mLONGEST SPAN : \033[0m\033[37m" << sp.longestSpan() << std::endl;
+    return ;
+}
+
 
 int main()
 {
     srand(time(NULL));
-    std::cout <<  "\033[1m\033[35m TEST 1 🧪 \033[0m\033[37m" <<std::endl;
+/*     std::cout <<  "\033[1m\033[35m TEST 1 🧪 \033[0m\033[37m" <<std::endl;
     test1();
     std::cout << std::endl;
     std::cout <<  "\033[1m\033[35m TEST 2 🧪 \033[0m\033[37m" <<  std::endl;
@@ -127,5 +158,11 @@ int main()
     std::cout << std::endl;  
     std::cout <<  "\033[1m\033[35m TEST 6 🧪 \033[0m\033[37m" <<  std::endl;
     test6();
+    std::cout << std::endl;
+    std::cout <<  "\033[1m\033[35m TEST 7 🧪 \033[0m\033[37m" <<  std::endl;
+    test7();
+    std::cout << std::endl;
+    std::cout <<  "\033[1m\033[35m TEST 8 🧪 \033[0m\033[37m" <<  std::endl; */
+    test8();
     std::cout << std::endl;
 }
