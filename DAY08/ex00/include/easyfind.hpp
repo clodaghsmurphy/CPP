@@ -6,19 +6,20 @@
 # include <deque>
 # include <list>
 # include <exception>
+# include <algorithm>
 
 template<class T>
 void    easyfind(T &container, int n)
 {
-    for (typename T::iterator it = container.begin(); it != container.end(); it++)
+    typename T::iterator it;
+
+    it = find(container.begin(), container.end(), n);
+    if (it !=  container.end())
     {
-        if (*it == n)
-        {
-            std::cout << " ✅ INT FOUND ✅" << std::endl;
-            return ;
-        }
+        std::cout << " ✅ [" << *it << "] INT FOUND ✅" << std::endl;
+        return ;
     }
-    std::cout << " ❌ INT NOT FOUND ❌" << std::endl;
+    std::cout << " ❌ ["<< n << "] INT NOT FOUND ❌" << std::endl;
 }
 
 template<class T>
