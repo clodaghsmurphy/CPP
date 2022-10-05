@@ -8,7 +8,6 @@ Span::Span() : stored(0), max(0)
 
 Span::Span(unsigned int N) : stored(0), max(N)
 {
-   vec.reserve(N);
     return ;
 }
 
@@ -42,12 +41,12 @@ void    Span::addNumber(int i)
 
 void    Span::addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end)
 {
-    std::vector<int> vec1;
-    for (unsigned int i = 0; i < max; i++)
-        vec1.push_back(rand()%100);
-    printVec();
-    vec.insert(begin, vec1.begin(), vec1.end());
-    (void)end;
+    unsigned int dist;
+
+    dist = distance(begin, end);
+    if (dist > max)
+        throw OutofBounds();
+    vec.insert(vec.begin(), begin, end);
 
 }
 bool ismore(int i, int j)
@@ -57,21 +56,15 @@ bool ismore(int i, int j)
 int Span::shortestSpan()
 {
     int res = std::numeric_limits<int>::max();
-    std::vector<int>::iterator begin;
     std::vector<int> vec2;
+    std::vector<int> vec3;
 
     if (vec.size() == 0 || vec.size() == 1)
         throw VecTooSmall();
     std::copy(vec.begin(), vec.end(), back_inserter(vec2));
-    std::sort(vec2.begin(), vec2.end(), ismore);
-    begin = vec2.begin();
-    while (begin <= vec2.end() - 2)
-    {
-
-        if ( *(begin + 1) - *begin <= res)
-            res = *(begin + 1) - *begin ;
-        begin++;
-    }
+    std::sort(vec2.begin(), vec2.end());
+    std::adjacent_difference(vec2.begin(), vec2.end(), std::back_inserter(vec3));
+    res = *(std::min_element(vec3.begin(), vec3.end()));
     return (res);
 }
 

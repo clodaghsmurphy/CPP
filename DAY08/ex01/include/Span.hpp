@@ -6,6 +6,7 @@
 # include <cstdlib>
 # include <algorithm>
 # include <iterator>
+# include <numeric>
 # include <limits>
 
 class Span{
@@ -45,7 +46,7 @@ class Span{
             public:
                 virtual const char * what() const throw()
                 {
-                    return "\033[1m\033[31m❌ Range out of bouns ❌";
+                    return "\033[1m\033[31m❌ Range out of bounds ❌";
                 }
         };
     private:
